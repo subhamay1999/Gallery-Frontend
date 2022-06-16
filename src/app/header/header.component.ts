@@ -84,7 +84,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.hService.logout().subscribe(
       (res) => {
-        console.log(res);
         localStorage.removeItem('token');
         localStorage.removeItem('name');
         localStorage.removeItem('folder_id');
@@ -95,7 +94,6 @@ export class HeaderComponent implements OnInit {
         localStorage.removeItem('name');
         localStorage.removeItem('folder_id');
         this.router.navigate(['/login']);
-        console.log(err);
       }
     );
   }
