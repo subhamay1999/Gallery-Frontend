@@ -16,13 +16,9 @@ export class ImageService {
   constructor(private http: HttpClient) {}
 
   // Get Image API
-  getImages(data:any): Observable<any> {
+  getImages(data: any): Observable<any> {
     return this.http
-      .post(
-        this.API_PIPE + 'image/getallimage',
-       data,
-        this.httpOptions
-      )
+      .post(this.API_PIPE + 'image/getallimage', data, this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
 
@@ -33,11 +29,10 @@ export class ImageService {
       .pipe(catchError(this.errorHandler));
   }
 
-  
-   //Delete Image API
-   deleteImage(data: any): Observable<any> {
+  //Delete Image API
+  deleteImage(data: any): Observable<any> {
     return this.http
-      .delete(this.API_PIPE + 'image/'+data, this.httpOptions)
+      .delete(this.API_PIPE + 'image/' + data, this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
 

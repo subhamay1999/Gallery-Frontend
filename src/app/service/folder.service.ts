@@ -29,16 +29,16 @@ export class FolderService {
       .post(this.API_PIPE + 'gallery', JSON.stringify(data), this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
-
+  // Get user all images API
   getAllImage(): Observable<any> {
     return this.http
       .get(this.API_ALL_IMAGE + 'getalluserimage', this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
-
+  // Delete Folder API
   deleteFolder(data: any): Observable<any> {
     return this.http
-      .delete(this.API_PIPE + 'gallery/'+ data, this.httpOptions)
+      .delete(this.API_PIPE + 'gallery/' + data, this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
 

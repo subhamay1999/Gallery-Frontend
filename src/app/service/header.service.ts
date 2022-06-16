@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderService {
   API_PIPE = `${environment.API_URI}`;
-  API_PIPI2=`${environment.FOLDER_URL}`;
+  API_PIPI2 = `${environment.FOLDER_URL}`;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -40,20 +40,19 @@ export class HeaderService {
       .pipe(catchError(this.errorHandler));
   }
 
-   //Upload Profile Image API
-   profileImage(data: any): Observable<any> {
+  //Upload Profile Image API
+  profileImage(data: any): Observable<any> {
     return this.http
       .post(this.API_PIPI2 + 'image/profilepic', data, this.httpOptions2)
       .pipe(catchError(this.errorHandler));
   }
 
-
-//Get Profile Image API
-getProfilePic(): Observable<any> {
-  return this.http
-    .get(this.API_PIPI2 + 'user/getprofilepic', this.httpOptions)
-    .pipe(catchError(this.errorHandler));
-}
+  //Get Profile Image API
+  getProfilePic(): Observable<any> {
+    return this.http
+      .get(this.API_PIPI2 + 'user/getprofilepic', this.httpOptions)
+      .pipe(catchError(this.errorHandler));
+  }
 
   // Logout API
   logout(): Observable<any> {
